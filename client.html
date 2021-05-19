@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Stats</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: xx-large;
+        }
+        h2{
+            text-align: center;
+            font-size: x-large;
+        }
+        /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover*/
+        .dropbtn {
+            background-color: #3e828e;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e828e;}
+        /*end citation*/
+
+        #result{
+            font-size: larger;
+        }
+        /*https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_align-content_space-evenly*/
+        #stats{
+            display: grid;
+            align-content: space-evenly;
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        /*end citation*/
+        #team_name{
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <div id="user">
+        <input type="text" id="register_username" placeholder="Username" />
+        <input type="password" id="register_password" placeholder="Password" />
+        <button id="register_btn">Register</button>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="login_btn">Log In</button>
+        <button id="logout_btn">Log Out</button><br>
+    </div>
+    <h1>Welcome! Come learn about your favorite MLB teams!</h1>
+    <h2>Log in or register to see info on your #1 team</h2>
+    <div id="search">
+        <a>See which team is best for a year in each stat:</a>
+        <input type="text" id="year" placeholder="Year" />
+        <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover-->
+        <div class="dropdown">
+            <button class="dropbtn">Stats</button>
+            <div class="dropdown-content">
+              <button onclick="get_stat('avg')" id="avg">Batting Average</button>
+              <button onclick="get_stat('obp')" id="obp">On Base Percentage</button>
+              <button onclick="get_stat('slg')" id="slg">Slugging</button>
+              <button onclick="get_stat('ops')" id="ops">On Base Plus Slugging</button>
+              <button onclick="get_stat('era')" id="era">Earned Run Average</button>
+              <button onclick="get_stat('fip')" id="fip">Fielding Independent Pitching</button>
+              <button onclick="get_stat('whip')" id="whip">Walks and Hits per Innings Pitched</button>
+            </div>
+        </div>
+        <!--end citation-->
+        <div id="result"></div>
+    </div><br>
+    <div id="dashboard">
+        <div id="team_name"></div>
+        <div id="stats"></div><br>
+        <a id="team_img"></a>
+    </div>
+
+    <script src="myscript.js"></script>
+</body>
+</html>
